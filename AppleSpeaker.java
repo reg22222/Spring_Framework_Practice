@@ -1,4 +1,7 @@
 package jeonggeun.spring.polymorphism;
+import org.springframework.*;
+import org.springframework.stereotype.Component;
+
 
 public class AppleSpeaker implements Speaker{
 	

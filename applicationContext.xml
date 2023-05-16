@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+		<context:component-scan base-package="jeonggeun.spring.polymorphism">
+		</context:component-scan>
+		<bean id="sonny" class="jeonggeun.spring.polymorphism.SonySpeaker" />
+
+		
+		
+		
+		
 	<!-- <bean id="tv" class="jeonggeun.spring.polymorphism.SamsungTV" init-method="start" 
-		destroy-method="stop"/> -->
-	<bean id="tv" class="jeonggeun.spring.polymorphism.SamsungTV">
-	<!--  
-		<constructor-arg index="0" ref="apple"></constructor-arg>
-		<constructor-arg index="1" value="3000000"></constructor-arg>-->
-		<property name="speaker" ref="apple"/>
-		<property name="price" value="30000000"/>
-	</bean>
-	<bean id="sony" class="jeonggeun.spring.polymorphism.SonySpeaker" />
-	<bean id="apple" class="jeonggeun.spring.polymorphism.AppleSpeaker"/>
-	
-
-
+		destroy-method="stop"/> 
+	<bean id="collectionBean"
+		class="jeonggeun.spring.collection.CollectionBean">
+		<property name="addressList">
+			<set value-type="java.lang.String">
+				<value>서울시 서초구 서초동</value>
+				<value>서울시 동대문구 장안동</value>
+				<value>서울시 동대문구 장안동</value>
+				<value>서울시 동대문구 장안동</value>
+			</set>
+		</property>
+	</bean>-->
 </beans>
